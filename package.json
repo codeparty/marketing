@@ -1,0 +1,15 @@
+{
+  "author": "codeparty",
+  "name": "racerjs.com",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:codeparty/racerjs.com.git"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=v0.4.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
