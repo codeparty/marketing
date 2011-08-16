@@ -1,7 +1,7 @@
 {
   "author": "codeparty",
   "name": "racerjs.com",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git@github.com:codeparty/racerjs.com.git"
@@ -13,7 +13,7 @@
   "dependencies": {
     "http-proxy": "0.5.11",
     "connect": "1.6.2",
-    "racer": "*"
+    "racer": "0.0.1"
   },
   "devDependencies": {}
 }
