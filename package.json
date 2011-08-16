@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git@github.com:codeparty/racerjs.com.git"
   },
-  "main": "index.js",
+  "main": "server.js",
   "engines": {
     "node": ">=0.4.0"
   },
