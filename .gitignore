@@ -1,0 +1,4 @@
+*.swp
+*.gz
+node_modules/
+script.js
