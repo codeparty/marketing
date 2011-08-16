@@ -12,7 +12,7 @@ httpProxy.createServer({
       , 'racerjs.com': '127.0.0.1: 3003'
       , 'www.racerjs.com': '127.0.0.1:3003'
     }
-}).listen(3000);
+}).listen(80);
 
 connect(
   connect.router( function (app) {
