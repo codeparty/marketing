@@ -11,7 +11,8 @@
     "node": ">=0.4.0"
   },
   "dependencies": {
-    "express": "2.4.3",
+    "http-proxy": "0.5.11",
+    "connect": "1.6.2",
     "racer": "*"
   },
   "devDependencies": {}
