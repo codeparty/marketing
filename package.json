@@ -11,7 +11,6 @@
     "node": ">=0.4.0"
   },
   "dependencies": {
-    "http-proxy": "https://github.com/bnoguchi/node-http-proxy/tarball/c9c9c138f0e71483dd80",
     "connect": "1.6.2",
     "racer": "0.0.1"
   },
