@@ -14,8 +14,8 @@ var app = connect(
 );
 
 var socketio = require('socket.io');
-io = socketio.listen(app);
-letters.racer.ioSockets(io.sockets);
-todos.racer.ioSockets(io.sockets);
+var io = socketio.listen(app);
+letters.racer.ioSockets(io.of('/sio/letters'), 'http://localhost:3000/sio/letters');
+todos.racer.ioSockets(io.of('/sio/todos'), 'http://localhost:3000/sio/todos');
 
 app.listen(3000);
