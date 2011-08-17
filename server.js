@@ -13,18 +13,9 @@ var app = connect(
   , todos.app
 );
 
-var numApps = 2;
+var socketio = require('socket.io');
+io = socketio.listen(app);
+letters.racer.ioSockets(io.sockets);
+todos.racer.ioSockets(io.sockets);
 
-letters.racer.listen(app);
-todos.racer.listen(app);
-
-// Clear any existing data, then initialize
-letters.store.flush( function (err) {
-  if (err) throw err;
-  --numApps || app.listen(3000);
-});
-
-todos.store.flush( function (err) {
-  if (err) throw err;
-  --numApps || app.listen(3000);
-});
+app.listen(3000);

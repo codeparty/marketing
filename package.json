@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "connect": "1.6.2",
-    "racer": "0.0.1"
+    "racer": "0.0.1",
+    "socket.io": ">=0.7.0"
   },
   "devDependencies": {}
 }
