@@ -19,7 +19,7 @@ app.use(
   letters(new Racer({
       redis: {db: 1}
     , sockets: io.of('/sio/letters')
-    , socketUri: 'http://localhost:3000/sio/letters'
+    , socketUri: 'http://racerjs.com/sio/letters'
   })).app
 );
 
@@ -27,8 +27,8 @@ app.use(
   todos(new Racer({
       redis: {db: 2}
     , sockets: io.of('/sio/todos')
-    , socketUri: 'http://localhost:3000/sio/todos'
+    , socketUri: 'http://racerjs.com/sio/todos'
   })).app
 );
 
-app.listen(3000);
+app.listen(80);
