@@ -15,6 +15,9 @@ var app = connect(
 
 var numApps = 2;
 
+letters.racer.listen(app);
+todos.racer.listen(app);
+
 // Clear any existing data, then initialize
 letters.store.flush( function (err) {
   if (err) throw err;
