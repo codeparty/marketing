@@ -31,4 +31,5 @@ app.use(
   })).app
 );
 
-app.listen(80);
+app.listen(process.env.NODE_ENV == 'production' ? 80 : 3000);
+
