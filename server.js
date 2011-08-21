@@ -1,7 +1,7 @@
 var connect = require('connect')
   , letters = require('racer/examples/letters/index')
   , todos = require('racer/examples/todos/index')
-  , Racer = require('racer').Racer
+  , racer = require('racer')
   , socketio = require('socket.io');
 
 var app = connect(
@@ -16,7 +16,7 @@ var app = connect(
 var io = socketio.listen(app);
 
 app.use(
-  letters(new Racer({
+  letters(racer.createStore({
       redis: {db: 1}
     , sockets: io.of('/sio/letters')
     , socketUri: '/sio/letters'
@@ -24,7 +24,7 @@ app.use(
 );
 
 app.use(
-  todos(new Racer({
+  todos(racer.createStore({
       redis: {db: 2}
     , sockets: io.of('/sio/todos')
     , socketUri: '/sio/todos'
