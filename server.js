@@ -13,7 +13,7 @@ var proxyServer = httpProxy.createServer({
     'derbyjs.com': '127.0.0.1:8002'
   }
 });
-proxyServer.listen(8009);
+proxyServer.listen(process.env.NODE_ENV == 'production' ? 80 : 8080);
 
 racerJs = express.createServer();
 racerJs.get('/', function (req, res) {
