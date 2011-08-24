@@ -1,19 +1,15 @@
 {
   "author": "codeparty",
-  "name": "racerjs.com",
-  "version": "0.0.7",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:codeparty/racerjs.com.git"
-  },
+  "name": "codeparty-marketing",
   "main": "server.js",
   "engines": {
     "node": ">=0.4.0"
   },
   "dependencies": {
-    "connect": "1.6.2",
-    "racer": "0.0.7",
-    "socket.io": ">=0.7.0"
+    "express": ">=2.4.3",
+    "http-proxy": ">=0.5.11",
+    "racer": "0.0.9",
+    "derby": "0.0.1"
   },
   "devDependencies": {}
 }
