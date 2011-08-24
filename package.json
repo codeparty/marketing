@@ -2,6 +2,7 @@
   "author": "codeparty",
   "name": "codeparty-marketing",
   "main": "server.js",
+  "version": "0.0.9",
   "engines": {
     "node": ">=0.4.0"
   },
@@ -10,6 +11,5 @@
     "http-proxy": ">=0.5.11",
     "racer": "0.0.9",
     "derby": "0.0.1"
-  },
-  "devDependencies": {}
+  }
 }
