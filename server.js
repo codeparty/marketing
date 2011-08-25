@@ -16,10 +16,10 @@ var proxyServer = httpProxy.createServer(function (req, res, proxy) {
   
   if (host === 'racerjs.com') {          
     if (reLetters.test(url)) {
-      req.url = req.url.substr(iLetters);
+      req.url = '/' + req.url.substr(iLetters);
       proxy.proxyRequest(req, res, { host: 'localhost', port: '3001' });
     } else if (reTodos.test(url)) {
-      req.url = req.url.substr(iTodos);
+      req.url = '/' + req.url.substr(iTodos);
       proxy.proxyRequest(req, res, { host: 'localhost', port: '3002' });
     } else {
       proxy.proxyRequest(req, res, { host: 'localhost', port: '8001' });
@@ -27,7 +27,7 @@ var proxyServer = httpProxy.createServer(function (req, res, proxy) {
   
   } else if (host === 'derbyjs.com') {
     if (reChat.test(url)) {
-      req.url = req.url.substr(iChat);
+      req.url = '/' + req.url.substr(iChat);
       proxy.proxyRequest(req, res, { host: 'localhost', port: '3003' });
     } else {
       proxy.proxyRequest(req, res, { host: 'localhost', port: '8002' });
