@@ -6,9 +6,9 @@ var httpProxy = require('http-proxy')
 
 var proxyServer = httpProxy.createServer({
   router: {
-    'racerjs.com/letters': '127.0.0.1:3001',
-    'racerjs.com/todos': '127.0.0.1:3002',
-    'derbyjs.com/chat': '127.0.0.1:3003',
+    'racerjs.com/letters/': '127.0.0.1:3001',
+    'racerjs.com/todos/': '127.0.0.1:3002',
+    'derbyjs.com/chat/': '127.0.0.1:3003',
     'racerjs.com': '127.0.0.1:8001',
     'derbyjs.com': '127.0.0.1:8002'
   }
