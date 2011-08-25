@@ -18,6 +18,7 @@ var proxyServer = httpProxy.createServer(function (req, res, proxy) {
   if (host === 'racerjs.com') {          
     if (reLetters.test(url)) {
       if (!reIo.test(url)) req.url = req.url.substr(iLetters);
+      console.log(req.url);
       proxy.proxyRequest(req, res, { host: 'localhost', port: '3001' });
     } else if (reTodos.test(url)) {
       if (!reIo.test(url)) req.url = req.url.substr(iTodos);
