@@ -8,18 +8,18 @@ var proxyServer = httpProxy.createServer(function (req, res, proxy) {
   var host = req.headers.host,
       url = req.url,
       reLetters = /^\/letters\//,
-      iLetters = reLetters.source.length,
+      iLetters = reLetters.source.length - 4,
       reTodos = /^\/todos\//,
-      iTodos = reTodos.source.length,
+      iTodos = reTodos.source.length - 4,
       reChat = /^\/chat\//,
-      iChat = reChat.source.length;
+      iChat = reChat.source.length - 4;
   
   if (host === 'racerjs.com') {          
     if (reLetters.test(url)) {
-      req.url = '/' + req.url.substr(iLetters);
+      req.url = req.url.substr(iLetters);
       proxy.proxyRequest(req, res, { host: 'localhost', port: '3001' });
     } else if (reTodos.test(url)) {
-      req.url = '/' + req.url.substr(iTodos);
+      req.url = req.url.substr(iTodos);
       proxy.proxyRequest(req, res, { host: 'localhost', port: '3002' });
     } else {
       proxy.proxyRequest(req, res, { host: 'localhost', port: '8001' });
