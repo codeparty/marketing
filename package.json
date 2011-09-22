@@ -2,14 +2,14 @@
   "author": "codeparty",
   "name": "codeparty-marketing",
   "main": "server.js",
-  "version": "0.0.11",
+  "version": "0.0.0",
   "engines": {
     "node": ">=0.4.0"
   },
   "dependencies": {
     "express": ">=2.4.3",
     "http-proxy": ">=0.5.11",
-    "racer": "0.0.12",
-    "derby": "0.0.5"
+    "racer": "0.0.13",
+    "derby": "0.0.9"
   }
 }
