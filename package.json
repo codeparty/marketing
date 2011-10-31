@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "express": ">=2.4.3",
-    "http-proxy": ">=0.5.11",
-    "racer": "0.0.13",
-    "derby": "0.0.9"
+    "bouncy": ">=1.0.2",
+    "racer": "0.0.14",
+    "derby": "0.0.10"
   }
 }
