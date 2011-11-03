@@ -13,6 +13,8 @@ racerJs.get('/', function (req, res) {
 });
 racerJs.listen(8001);
 
+// Note that currently bouncy is failing with xhr-polling and socket.io
+
 bouncy(function (req, bounce) {
   req.on('error', function(err) { console.error(err.message) });
   switch (req.headers.host) {
@@ -33,3 +35,7 @@ bouncy(function (req, bounce) {
       return bounce(3002);
   }
 }).listen(process.env.NODE_ENV == 'production' ? 80 : 8080);
+
+process.on('uncaughtException', function(err) {
+  console.error(err.stack || err);
+});
