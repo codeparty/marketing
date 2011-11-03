@@ -14,8 +14,8 @@ racerJs.get('/', function (req, res) {
 racerJs.listen(8001);
 
 bouncy(function (req, bounce) {
+  req.on('error', function(err) { console.error(err.message) });
   switch (req.headers.host) {
-    req.on('error', function(err) { console.error(err.message) });
     case 'racerjs.com':
     case 'www.racerjs.com':
       return bounce(8001);
