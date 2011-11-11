@@ -1,11 +1,13 @@
-var bouncy = require('bouncy')
-  , express = require('express')
-  , letters = require('racer/examples/letters')
-  , pad = require('racer/examples/pad')
-  , todos = require('racer/examples/todos')
-  , hello = require('derby/examples/hello')
-  , sink = require('derby/examples/sink')
-  , chat = require('derby/examples/chat');
+var httpProxy = require('http-proxy')
+  , express = require('express');
+
+require('derby/examples/hello');
+require('derby/examples/sink');
+require('derby/examples/chat');
+require('derby/examples/todos');
+require('racer/examples/letters');
+require('racer/examples/pad');
+require('racer/examples/todos');
 
 racerJs = express.createServer();
 racerJs.get('/', function (req, res) {
@@ -13,30 +15,21 @@ racerJs.get('/', function (req, res) {
 });
 racerJs.listen(8001);
 
-// Note that currently bouncy is failing with xhr-polling and socket.io
-
-bouncy(function (req, bounce) {
-  req.on('error', function(err) { console.error(err.message) });
-  switch (req.headers.host) {
-    case 'racerjs.com':
-    case 'www.racerjs.com':
-      return bounce(8001);
-    case 'letters.racerjs.com':
-      return bounce(3010);
-    case 'pad.racerjs.com':
-      return bounce(3011);
-    case 'todos.racerjs.com':
-      return bounce(3012);
-    case 'hello.derbyjs.com':
-      return bounce(3000);
-    case 'sink.derbyjs.com':
-      return bounce(3001);
-    case 'chat.derbyjs.com':
-      return bounce(3002);
+httpProxy.createServer({  	
+  hostnameOnly: true,
+  router: {
+    'racerjs.com':         '127.0.0.1:8001',
+    'www.racerjs.com':     '127.0.0.1:8001',
+    'hello.derbyjs.com':   '127.0.0.1:3000',
+    'sink.derbyjs.com':    '127.0.0.1:3001',
+    'chat.derbyjs.com':    '127.0.0.1:3002',
+    'todos.derbyjs.com':   '127.0.0.1:3003',
+    'letters.racerjs.com': '127.0.0.1:3010',
+    'pad.racerjs.com':     '127.0.0.1:3011',
+    'todos.racerjs.com':   '127.0.0.1:3012'
   }
 }).listen(process.env.NODE_ENV == 'production' ? 80 : 8080);
 
 process.on('uncaughtException', function(err) {
   console.error(err.stack || err);
 });
-
