@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "express": ">=2.4.3 < 3.0.0",
-    "http-proxy": ">=0.7.5",
+    "http-proxy": "0.7.6",
     "racer": "0.1.6",
     "derby": "0.1.6"
   }
