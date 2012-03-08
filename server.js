@@ -17,7 +17,7 @@ examples.forEach(function(example) {
   var path = require.resolve(example)
   cp.fork(path, [], {
     cwd: dirname(path)
-    env: {NODE_ENV: 'production'}
+    env: process.env
   });
 });
 
