@@ -15,7 +15,10 @@ var fs = require('fs')
 
 examples.forEach(function(example) {
   var path = require.resolve(example)
-  cp.fork(path, [], {cwd: dirname(path)});
+  cp.fork(path, [], {
+    cwd: dirname(path)
+    env: {NODE_ENV: 'production'}
+  });
 });
 
 racerJs = express.createServer();
