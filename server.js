@@ -1,15 +1,6 @@
 var fs = require('fs')
-  , cp = require('child_process')
   , httpProxy = require('http-proxy')
   , express = require('express')
-
-cp.fork(require.resolve('derby/examples/hello'));
-cp.fork(require.resolve('derby/examples/sink'));
-cp.fork(require.resolve('derby/examples/chat'));
-cp.fork(require.resolve('derby/examples/todos'));
-cp.fork(require.resolve('racer/examples/letters'));
-cp.fork(require.resolve('racer/examples/pad'));
-cp.fork(require.resolve('racer/examples/todos'));
 
 racerJs = express.createServer();
 racerJs.get('/', function (req, res) {
