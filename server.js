@@ -1,6 +1,22 @@
 var fs = require('fs')
+  , dirname = require('path').dirname
+  , cp = require('child_process')
   , httpProxy = require('http-proxy')
   , express = require('express')
+  , examples = [
+      'derby/examples/hello'
+    , 'derby/examples/sink'
+    , 'derby/examples/chat'
+    , 'derby/examples/todos'
+    , 'racer/examples/letters'
+    , 'racer/examples/pad'
+    , 'racer/examples/todos'
+    ]
+
+examples.forEach(function(example) {
+  var path = require.resolve(example)
+  cp.fork(path, [], {cwd: dirname(path)});
+});
 
 racerJs = express.createServer();
 racerJs.get('/', function (req, res) {
