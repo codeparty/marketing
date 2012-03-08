@@ -1,5 +1,6 @@
-var httpProxy = require('http-proxy')
-  , express = require('express');
+var fs = require('fs')
+  , httpProxy = require('http-proxy')
+  , express = require('express')
 
 require('derby/examples/hello');
 require('derby/examples/sink');
@@ -28,9 +29,17 @@ httpProxy.createServer({
     'pad.racerjs.com':     '127.0.0.1:3011',
     'todos.racerjs.com':   '127.0.0.1:3012'
   }
-}).listen(process.env.NODE_ENV == 'production' ? 80 : 8080);
+}).listen(process.env.NODE_ENV == 'production' ? 80 : 8080, function() {
+
+  // If run as root, downgrade to the owner of this file
+  if (process.getuid() === 0) {
+    fs.stat(__filename, function(err, stats) {
+      if (err) return console.log(err);
+      process.setuid(stats.uid);
+    })
+  }
+});
 
 process.on('uncaughtException', function(err) {
   console.error(err.stack || err);
 });
-
