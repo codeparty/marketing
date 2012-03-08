@@ -11,7 +11,6 @@
     "http-proxy": ">=0.8.0",
     "racer": "0.1.9",
     "derby": "0.1.9",
-    "connect-gzip": "0.1.5",
-    "share": "0.4.1"
+    "connect-gzip": "0.1.5"
   }
 }
