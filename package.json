@@ -9,8 +9,8 @@
   "dependencies": {
     "express": ">=2.4.3 < 3.0.0",
     "http-proxy": ">=0.8.0",
-    "racer": "0.1.9",
-    "derby": "0.1.9",
+    "racer": "0.1.10",
+    "derby": "0.1.10",
     "connect-gzip": "0.1.5"
   }
 }
