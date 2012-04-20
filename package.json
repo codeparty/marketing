@@ -10,6 +10,6 @@
     "express": ">=2.4.3 < 3.0.0",
     "http-proxy": ">=0.8.0",
     "racer": "0.3.2",
-    "derby-examples": "0.3.2",
+    "derby-examples": "0.3.2"
   }
 }
