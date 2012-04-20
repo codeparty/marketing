@@ -4,10 +4,10 @@ var fs = require('fs')
   , httpProxy = require('http-proxy')
   , express = require('express')
   , examples = [
-      'derby/examples/hello'
-    , 'derby/examples/sink'
-    , 'derby/examples/chat'
-    , 'derby/examples/todos'
+      'derby-examples/hello'
+    , 'derby-examples/sink'
+    , 'derby-examples/chat'
+    , 'derby-examples/todos'
     , 'racer/examples/letters'
     , 'racer/examples/pad'
     , 'racer/examples/todos'
@@ -51,6 +51,6 @@ httpProxy.createServer({
   }
 });
 
-process.on('uncaughtException', function(err) {
-  console.error(err.stack || err);
-});
+// process.on('uncaughtException', function(err) {
+//   console.error(err.stack || err);
+// });
