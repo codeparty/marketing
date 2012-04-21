@@ -22,7 +22,7 @@ examples.forEach(function(example) {
 });
 
 racerJs = express.createServer();
-racerJs.get('/', function (req, res) {
+racerJs.get('/', function(req, res) {
   res.redirect('https://github.com/codeparty/racer');
 });
 racerJs.listen(8001);
