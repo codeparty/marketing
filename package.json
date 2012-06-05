@@ -11,6 +11,7 @@
     "http-proxy": ">=0.8.0",
     "racer": "0.3.7",
     "derby-examples": "0.3.7",
+    "derby-ui-boot": "0.0.4",
     "connect-gzip": ">=0.1.5"
   }
 }
