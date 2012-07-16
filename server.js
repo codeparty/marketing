@@ -2,6 +2,7 @@ var fs = require('fs')
   , dirname = require('path').dirname
   , cp = require('child_process')
   , httpProxy = require('http-proxy')
+  , http = require('http')
   , express = require('express')
   , examples = [
       'derby-examples/hello'
@@ -23,11 +24,11 @@ examples.forEach(function(example) {
   });
 });
 
-racerJs = express.createServer();
+racerJs = express();
 racerJs.get('/', function(req, res) {
   res.redirect('https://github.com/codeparty/racer');
 });
-racerJs.listen(8001);
+http.createServer(racerJs).listen(8001);
 
 httpProxy.createServer({
   hostnameOnly: true,
