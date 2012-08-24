@@ -9,9 +9,9 @@
   "dependencies": {
     "express": "3.x",
     "http-proxy": ">=0.8.0",
-    "racer": "0.3.12",
-    "derby-examples": "0.3.12",
-    "derby-ui-boot": ">=0.0.5",
+    "racer": "0.3.13",
+    "derby-examples": "0.3.13",
+    "derby-ui-boot": ">=0.0.6",
     "connect-gzip": ">=0.1.5"
   }
 }
