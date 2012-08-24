@@ -6,14 +6,14 @@ var fs = require('fs')
   , express = require('express')
   , examples = [
       'derby-examples/hello'
-    , 'derby-examples/sink'
-    , 'derby-examples/chat'
-    , 'derby-examples/todos'
-    , 'derby-examples/directory'
-    , 'derby-examples/widgets'
-    , 'racer/examples/letters'
-    , 'racer/examples/pad'
-    , 'racer/examples/todos'
+    // , 'derby-examples/sink'
+    // , 'derby-examples/chat'
+    // , 'derby-examples/todos'
+    // , 'derby-examples/directory'
+    // , 'derby-examples/widgets'
+    // , 'racer/examples/letters'
+    // , 'racer/examples/pad'
+    // , 'racer/examples/todos'
     ]
 
 examples.forEach(function(example) {
